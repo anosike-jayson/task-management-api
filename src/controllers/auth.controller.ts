@@ -26,12 +26,12 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     try {
         const { ...data } = matchedData(req);
         const { email, password } = data;
-        const user = await authService.loginUser(email, password);
+        const token = await authService.loginUser(email, password);
 
         res.status(200).json({
             status: 200,
             message: "Login successful",
-            data: user
+            token: token
         });
     } catch (error: any) {
         res.status(error.httpStatusCode || 500).json({

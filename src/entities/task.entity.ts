@@ -27,5 +27,5 @@ export class Task {
     updatedAt: Date;
 
     @ManyToOne(() => User, (user) => user.tasks)
-    user;
+    user: User;
 }

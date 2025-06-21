@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-import { AppDataSource } from '../data-source.js';
-import { User } from '../entities/user.entity.js';
+import { AppDataSource } from '../data-source';
+import { User } from '../entities/user.entity';
 
 export async function registerUser (email: string, password: string) {
     const userRepository = AppDataSource.getRepository(User);
